@@ -1,0 +1,43 @@
+
+<nav class="navbar navbar-light bg-faded">
+  <div class='container'>
+    <a class='navbar-brand' href='/'>
+      Mitch<span class='light'>Loar</span>
+    </a>
+    <button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+      &#9776;
+    </button>
+               <!-- /* blog posts */   -->
+    <ul class="nav pull-sm-right hidden-xs-down">
+      <li class="nav-item"><%= link_to 'Blog', root_path, class: "nav-link #{yield(:blog_active)}" %></li>
+      <li class="nav-item"><%= link_to 'About', about_path, class: "nav-link #{yield(:about_active)}" %></li>
+      <li class="nav-item"><%= link_to 'Contact', contact_path, class: "nav-link #{yield(:contact_active)}" %></li>
+                <!-- /* Author posts */   -->
+    <% if author_signed_in? %>
+      <li class="nav-item"><%= link_to 'My Posts', authors_posts_path, class: "nav-link #{yield(:author)}" %></li>
+      <li class="nav-item"><%= link_to 'Logout', destroy_author_session_path, method: :delete, class: "nav-link" %></li>
+    <% end %>
+
+    </ul>
+  </div>
+</nav>
+
+<!-- This is for mobile  -->
+<div class="collapse" id="exCollapsingNavbar">
+  <div class="collapse-bg p-a-1">
+    <div class='card'>
+      <ul class="list-group list-group-flush">
+                <!-- /* blog posts */   -->
+        <li class="list-group-item"><%= link_to 'Blog', root_path, class: "nav-link #{yield(:blog_active)}" %></li>
+        <li class="list-group-item"><%= link_to 'About', about_path, class: "nav-link #{yield(:about_active)}" %></li>
+        <li class="list-group-item"><%= link_to 'Contact', contact_path, class: "nav-link #{yield(:contact_active)}" %></li>
+                <!-- /* Author posts */   -->
+      <% if author_signed_in? %>
+        <li class="list-group-item"><%= link_to 'My Posts', authors_posts_path, class: "nav-link #{yield(:author)}" %></li>
+        <li class="list-group-item"><%= link_to 'Logout', destroy_author_session_path, method: :delete, class: "nav-link" %></li>
+
+      <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

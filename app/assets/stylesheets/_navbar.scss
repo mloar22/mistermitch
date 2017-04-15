@@ -1,0 +1,59 @@
+.navbar {
+    border-radius: 0;
+    margin-bottom: 20px;
+    background-color: $royal-blue;
+    .navbar-brand {
+        font-weight: bolder;
+        color: $gold-yellow;
+        .light {
+            font-weight: 300;
+            color: $seashell;
+        }
+    }
+    .navbar-toggler {
+        outline: none;
+        text-decoration: none;
+        color: $seashell;
+    }
+    .nav-link {
+      color: $seashell !important;
+      &.active {
+        color: $light-blue !important;
+      }
+    }
+    .nav-item.author-nav {
+      img {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        border: 1px solid red;
+      }
+    }
+}
+
+.collapse-bg {
+    padding: 0 !important;
+    .card {
+        margin-bottom: 0;
+        border-radius: 0;
+        border: none;
+    }
+}
+
+
+.collapse-bg .card .list-group-item {
+    padding: 0;
+    border-radius: 0 !important;
+    border-color: $seashell;
+    a {
+        background-color: $royal-blue;
+        color: $seashell;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        &:active {
+            color: white;
+            border-bottom: none;
+        }
+    }
+}
