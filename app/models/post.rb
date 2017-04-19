@@ -16,11 +16,14 @@
 #
 
 class Post < ApplicationRecord
+  acts_as_taggable # Alias for acts_as_taggable_on :tags
 
   extend FriendlyId
   friendly_id :title, use: :slugged
 
   belongs_to :author
+
+  PER_PAGE = 3
 
   scope :most_recent, -> { order(published_at: :desc) }
   scope :published, -> { where(published: true) }
